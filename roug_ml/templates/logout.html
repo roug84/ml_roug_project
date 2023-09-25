@@ -1,0 +1,10 @@
+{% extends "acessolayout.html" %}
+
+{% block content %}
+    {% if session['logged_in'] %}
+        <h2> You are logged out </h2>
+        <!--"<b><a href = '/logout'>click here to log out</a></b>"-->
+    {% else %}
+        <h2> You are not logged in </h2>
+    {% endif %}
+{% endblock %}

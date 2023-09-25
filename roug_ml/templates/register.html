@@ -1,0 +1,29 @@
+{% extends "acessolayout.html" %}
+
+{% block content %}
+
+    {% if session['logged_in'] %}
+        <h2> Bienvenido a DiObeMex! </h2>
+        <h2> Ya estas registrado! </h2>
+    {% else %}
+        <form class="modal-content animate" action="" method="post">
+            <div class="imgcontainer">
+                <img src = "{{ url_for('static', filename ='image/DiObeMex_v3.png') }}" alt="Avatar" class="avatar">
+              <!--<img src="http://diobemex.com/images/DiObeMex_v3.png" alt="Avatar" class="avatar">-->
+            </div>
+            <label for="username"><b>Usuario</b></label>
+            <input type="text" placeholder="Ingresa Usuario" name="username" required  value="{{ request.form.username }}">
+            <label for="password"><b>Contraseña</b></label>
+            <input type="password" placeholder="Ingresa Contraseña" name="password" required  value="{{ request.form.password }}">
+            <button type="submit" style="background-color:#148F77;">Register</button>
+        </form>
+
+        <!--<h2> Registra tu cuenta ahora: </h2>-->
+        <!--<form action="" method="post">-->
+            <!--<input type="text" placeholder="Username" name="username" value="{{ request.form.username }}">-->
+            <!--<input type="password" placeholder="Password" name="password" value="{{ request.form.password }}">-->
+            <!--<input class="btn btn-default" type="submit" value="Register">-->
+        <!--</form>-->
+    {% endif %}
+{% endblock %}
+

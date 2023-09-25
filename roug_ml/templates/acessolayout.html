@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <title>HomeApp</title>
+    <!--    <link rel = "icon" href = "{{ url_for('static', filename ='image/Logo_EngranevF.png') }}"/>-->
+        <meta charset ="utf-8" />
+        <meta name ="viewport" content ="width = device-width, initial-scale=1" />
+        <link rel ="stylesheet" href ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel ="stylesheet" type ="text/css" href ="{{ url_for('static', filename ='css/style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+
+    <body text = "black">
+        <div class ="mobile-container">
+            <div id = diobe class = "container";>
+                <img src = "http://89.3.68.236/images/Logo_EngranevF.png" alt = "Snow" style = "width:20%" onLoad="scrolling_down()">
+                <div  class = "bottom-right">
+                    <!--<img src = "http://89.3.68.236/images/Logo_EngranevF.png" alt = "Snow" style = "width:20%">-->
+                    <h1>HomeApp</h1> <h3>Bienvenido a casa!</h3>
+                </div>
+            </div>
+
+            <nav class ="navbar">
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/"> Inicio </a> </li>
+                </ul>
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/upload_file"> upload </a> </li>
+                </ul>
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/temperature"> Temp </a> </li>
+                </ul>
+                <!--  <ul class="left">
+                    <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/createnote"> Crear nota </a> </li>
+                </ul>-->
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/act_stream"> LiveCam </a> </li>
+                </ul>
+
+
+            </nav>
+            <div class ="container" style = "background-color:#F8F8F8; color:black; overflow: hidden;">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <nav class ="navbar">
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/login"> Entrar </a> </li>
+                </ul>
+                <ul class ="left">
+                    <li style ="font-size:120%; background-color:#F8F8F8;"> <a href ="/logout"> Salir </a> </li>
+                </ul>
+                 <!--<ul class="left">-->
+                    <!--<li style="font-size:120%; background-color:#F8F8F8;"> <a href="/register"> Registrase </a> </li>-->
+                <!--</ul>-->
+            </nav>
+         </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+{% extends "act_stream_layout.html" %}
+
+
+{% block content %}
+    {% if session['logged_in'] %}
+        <!--<button onclick="myFunction2()">Try it</button>-->
+        <form method="POST">
+            <!--<h1>Security Camera: </h1>
+            <label class="container">On
+            <input type="radio" checked="checked" name="camact"  value = "Activated">
+            <span class="checkmark"></span>
+            </label>
+            <label class="container">off
+            <input type="radio" name="camact"  value = "Not">
+            <span class="checkmark"></span>
+            </label>-->
+            <!--<input type="text" name="tag"><br>-->
+            <br>
+            <br>
+            <!--<input type="button" class="button" value="Input Button">-->
+            <input type="submit" class="button" value="Submit">
+            <label class="container">Activate
+                <input type="radio"  id="option1" name="camact" value="Activated">
+                <span class="checkmark"></span>
+            </label>
+            <label class="container">Deactivate
+                <input type="radio" checked="checked" id="option2" name="camact" value="Not">
+                <span class="checkmark"></span>
+            </label>
+            <br>
+            <br>
+        </form>
+        <!-- <meta http-equiv="refresh" content="1"/>-->
+    {% else %}
+        <h2> No estas conectado! </h2>
+        <p> Conéctate para ver tus notas! </p>
+        <p> Y si no tienes tu cuenta Regístrate! </p>
+        <!--<li> <a href="/login" class="class1"> Go to login </a> </li>-->
+        <p> </p>
+    {% endif %}
+
+{% endblock %}
+
+
+
+ <!--<input class="btn btn-default" type="submit" name = "login" value="Log in">-->
+<!--a:link, a:visited {-->
+  <!--background-color: #f44336;-->
+  <!--color: white;-->
+  <!--padding: 14px 25px;-->
+  <!--text-align: center;-->
+  <!--text-decoration: none;-->
+  <!--display: inline-block;-->
+<!--}-->
+
+<!--a:hover, a:active {-->
+  <!--background-color: red;-->
+<!--}-->

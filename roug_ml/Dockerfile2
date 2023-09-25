@@ -1,0 +1,38 @@
+#FROM tensorflow/tensorflow
+FROM python:3.10-alpine3.13
+# Install production dependencies.
+COPY ../requirements.txt /var/www/requirements.txt
+#ADD requirements.txt .
+RUN pip install -r /var/www/requirements.txt
+
+# Copy local code to the container image.
+#WORKDIR /app
+
+
+# Service must listen to $PORT environment variable.
+# This default value facilitates local development.
+# ENV PORT 8080
+ENV STATIC_URL /static
+ENV STATIC_PATH /Users/hector/DiaHecDev/pa_recognition/DevPARecognition/static
+# Run the web service on container startup. Here we use the gunicorn
+# webserver, with one worker process and 8 threads.
+# For environments with multiple CPU cores, increase the number of workers
+# to be equal to the cores available.
+CMD exec gunicorn --bind 0.0.0.0:8000 --workers 1 --threads 8 --timeout 0 main:app
+
+
+#FROM python:3.10-alpine3.13
+#RUN apk --update add bash nano
+#ENV STATIC_URL /static
+#ENV STATIC_PATH /Users/hector/DiaHecDev/pa_recognition/roug_ml/static
+#COPY ./requirements.txt /var/www/requirements.txt
+##/Users/hector/DiaHecDev/pa_recognition/roug_ml/requirements.txt
+#RUN pip install --upgrade pip
+#RUN pip install -r /var/www/requirements.txt
+#    #/Users/hector/DiaHecDev/pa_recognition/roug_ml/requirements.txt
+#ls#FROM tiangolo/uwsgi-nginx:python3.10
+##RUN apk --update add bash nano
+##ENV STATIC_URL /static
+##ENV STATIC_PATH /var/www/app/static
+##COPY ./requirements.txt /var/www/requirements.txt
+##RUN pip install -r /var/www/requirements.txt

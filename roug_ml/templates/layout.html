@@ -1,0 +1,72 @@
+<head>
+	<title>HomeApp</title>
+    <link rel="icon" href="http://89.3.68.236/images/Logo_EngranevF.png"/>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body text = "black">
+    <div class="mobile-container">
+    <div id=diobe class="container";>
+        <!--style = background-color:Navy;>-->
+        <img src="http://89.3.68.236/images/Logo_EngranevF.png" alt="Snow" style="width:20%" onLoad="scrolling_down()">
+        <div  class="bottom-left">
+            <!--<img src="http://89.3.68.236/images/Logo_EngranevF.png" alt="Snow" style="width:20%">-->
+            <h1>HomeApp</h1> <h3>Tecnología que mejora tu vida!</h3>
+        </div>
+    </div>
+    <nav class="navbar">
+        <ul class="left">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/"> Inicio </a> </li>
+        </ul>
+        <ul class="left">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/upload_file"> upload file </a> </li>
+        </ul>
+        <!--<ul class="left">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/createnote"> Crear nota </a> </li>
+        </ul>-->
+        <ul class="left">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/strehome"> LiveCam </a> </li>
+        </ul>
+
+
+    </nav>
+    <div id=usercont class="container" style = "background-color:#F8F8F8; color:black; overflow: hidden;">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <nav class="navbar">
+        <ul class="right">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/login"> Ingresar </a> </li>
+        </ul>
+        <ul class="right">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/logout"> Desconectar </a> </li>
+        </ul>
+         <ul class="right">
+            <li style="font-size:120%; background-color:#F8F8F8;"> <a href="/register"> Registrar </a> </li>
+        </ul>
+    </nav>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function hideMenu() {
+  document.getElementById("myLinks").style.display = 'none';
+}
+
+function scrolling_down() {
+        window.scrollBy(0, 1500);
+}
+</script>
+</body>
+</html>

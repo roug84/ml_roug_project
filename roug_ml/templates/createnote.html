@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+scrolling_down()
+scrolling_down()
+scrolling_down()
+{% block content %}
+
+    {% if session['logged_in'] %}
+        <form method="post" class="noteform">
+            Your note:
+            <label for="notetext">
+                <textarea name="notetext">
+                </textarea>
+            </label>
+            <input type="submit" name="createnote" value="Save this hehe">
+        </form>
+    {% else %}
+        <h2> You are not LOGGED </h2>
+        <p> Please go to login </p>
+        <!--<li> <a href="/login" class="class1"> Go to login </a> </li>-->
+        <p> </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "uploadfile_layout_layout.html" %}
+
+
+{% block content %}
+
+    <br>
+    <br>
+    <title>Upload new File</title>
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+    <br>
+    <br>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var graphs = {{graphJSON | safe}};
+        Plotly.plot('chart',graphs,{});
+    </script>
+
+
+{% endblock %}
+
+
+
+ <!--<input class="btn btn-default" type="submit" name = "login" value="Log in">-->
+<!--a:link, a:visited {-->
+  <!--background-color: #f44336;-->
+  <!--color: white;-->
+  <!--padding: 14px 25px;-->
+  <!--text-align: center;-->
+  <!--text-decoration: none;-->
+  <!--display: inline-block;-->
+<!--}-->
+
+<!--a:hover, a:active {-->
+  <!--background-color: red;-->
+<!--}-->

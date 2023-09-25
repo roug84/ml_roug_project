@@ -1,0 +1,43 @@
+{% extends "strehome_layout.html" %}
+
+
+{% block content %}
+    {% if session['logged_in'] %}
+
+        <div class="notelist">
+            <img src="{{ url_for('bp7.video_feed') }}" width = 100%>
+            <!--<hr>
+	        <h3> Return to main page ==> <a href="/"class="button">RETURN</a></h3>	
+	    <hr>-->
+            <!--<img src="http://81.220.138.56/4.jpg"; width = 100%>-->
+	    <!--<img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg">-->
+        </div>
+        <!--<form method="POST">
+            Asset Tag:<br>
+            <input type="text" name="tag"><br>
+            <input type="submit" value="Submit">
+        </form>-->
+        <!-- <meta http-equiv="refresh" content="1"/>-->
+    {% else %}
+        <h2> No estas conectado! </h2>
+        <p> Conéctate para ver tus notas! </p>
+        <p> Y si no tienes tu cuenta Regístrate! </p>
+        <!--<li> <a href="/login" class="class1"> Go to login </a> </li>-->
+        <p> </p>
+    {% endif %}
+{% endblock %}
+
+
+ <!--<input class="btn btn-default" type="submit" name = "login" value="Log in">-->
+<!--a:link, a:visited {-->
+  <!--background-color: #f44336;-->
+  <!--color: white;-->
+  <!--padding: 14px 25px;-->
+  <!--text-align: center;-->
+  <!--text-decoration: none;-->
+  <!--display: inline-block;-->
+<!--}-->
+
+<!--a:hover, a:active {-->
+  <!--background-color: red;-->
+<!--}-->

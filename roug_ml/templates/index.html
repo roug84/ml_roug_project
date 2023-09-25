@@ -1,0 +1,12 @@
+{% extends "acessolayout.html" %}
+
+
+{% block content %}
+    {% if session['logged_in'] %}
+        <h2> Bienvenido a Home </h2>
+    {% else %}
+        <h2> Para mas información ingresa tu cuenta!  </h2>
+        <p> Please login </p>
+        <p> </p>
+    {% endif %}
+{% endblock %}
